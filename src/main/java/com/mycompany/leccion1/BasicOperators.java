@@ -46,6 +46,7 @@ public class BasicOperators {
         System.out.println(12 % 12);
         System.out.println(13 % 12);
         System.out.println(18 % 12);
+        System.out.println(12 % 24);
         System.out.println(10 + 18 % 12 * 10);
         System.out.println(((10 + 18) % 12) * 10);
         a++;
