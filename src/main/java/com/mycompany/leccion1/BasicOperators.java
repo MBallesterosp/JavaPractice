@@ -127,5 +127,11 @@ public class BasicOperators {
         System.out.println(a);
         a %= b;
         System.out.println(a);
+       
     }
+    public void logical(){
+        System.out.println("logical and");
+        System.out.println(false && true);
+        
+    }    
 }

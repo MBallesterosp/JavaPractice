@@ -20,6 +20,7 @@ public class Leccion2 {
         BasicOperators.relational();
         BasicOperators.bitwise();
         BasicOperators.assigment();
+        basicOperators.logical();
         
         BasicOperators x = new BasicOperators();        
         BasicOperators y = new BasicOperators();
