@@ -21,6 +21,8 @@ public class Leccion2 {
         BasicOperators.bitwise();
         BasicOperators.assigment();
         basicOperators.logical();
+        basicOperators.conditional();
+        basicOperators.reflective();
         
         BasicOperators x = new BasicOperators();        
         BasicOperators y = new BasicOperators();

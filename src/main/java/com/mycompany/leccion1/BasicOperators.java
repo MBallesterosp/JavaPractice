@@ -14,15 +14,14 @@ public class BasicOperators {
     String a;
     static String b;
     final String C_D;
-    
 
-    public BasicOperators(){
+    public BasicOperators() {
         this.a = "hola";
         this.b = "adios";
         this.C_D = "mimir";
     }
 
-    public BasicOperators(String a, String b){
+    public BasicOperators(String a, String b) {
         this.a = a;
         this.b = b;
         this.C_D = "mimir";
@@ -127,11 +126,54 @@ public class BasicOperators {
         System.out.println(a);
         a %= b;
         System.out.println(a);
-       
+        a <<= 2;
+        System.out.println(a);
+        a >>= 2;
+        System.out.println(a);
+        a &= 2;
+        System.out.println(a);
+        a ^= 2;
+        System.out.println(a);
+        a |= 2;
+        System.out.println(a);
     }
-    public void logical(){
+
+    public void logical() {
         System.out.println("logical and");
         System.out.println(false && true);
-        
-    }    
+        System.out.println("logical or");
+        System.out.println(false || true);
+        System.out.println("logical not");
+        System.out.println(!true);
+    }
+
+    public void conditional() {
+        int a;
+        int b;
+        a = 10;
+        b = true ? 20 : 30;
+        System.out.println(b);
+        b = false ? 20 : 30;
+        System.out.println(b);
+        b = (a == 1) ? 20 : 30;
+        System.out.println(b);
+        b = ((a - 9) == 1) ? 20 : 30;
+        System.out.println(b);
+        String hola = "Hola";
+        String adios = "Adios";
+        boolean meVoy = true;
+        boolean meVengo = true;
+        System.out.println(meVoy?adios:hola);
+        System.out.println(meVengo?hola:adios);
+    }
+
+    public void reflective() {
+        System.out.println("reflective");
+        Integer a = 10;
+        String b = "Hola";
+        boolean result;
+        result = b instanceof String;
+        System.out.println(result);
+        System.out.println(a instanceof Integer);
+    }
 }
