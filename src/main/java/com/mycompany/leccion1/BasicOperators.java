@@ -170,10 +170,22 @@ public class BasicOperators {
     public void reflective() {
         System.out.println("reflective");
         Integer a = 10;
+        Long c = 50L;
+        Short d = 45;
+        Byte j = 8;
+        Float q = 2.3f;
+        Double z = 3.22d;
+        Character g = 'a';
+        Character das = '\u0000';
+        Boolean s = true;
+        int l = 12;
+        System.out.println(a.MAX_VALUE);
+        System.out.println(Integer.MAX_VALUE);
         String b = "Hola";
         boolean result;
         result = b instanceof String;
         System.out.println(result);
         System.out.println(a instanceof Integer);
+        System.out.println(a instanceof Number);
     }
 }
