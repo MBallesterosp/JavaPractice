@@ -11,31 +11,51 @@ import java.util.Random;
  * @author Ztr4w
  */
 public class Sorting {
-    
-    public static void main(String[] args){
-        
+
+    public static void main(String[] args) {
+        initialize();
+        printArray2(myRandomArray);
     }
-    
-    public static void initialize(){
+    static int[] myRandomArray;
+
+    public static void initialize() {
         int[] myEmptyArray = {};
         int[] myEmptyArrayTwo = new int[5];
         int[] myEmptyArrayThree = { , };
         int[] myArray = {12};
         int[] myArrayTwo = {12, 30};
-        int[] myRandomArray = new int[10];
+        myRandomArray = new int[10];
         Random generator = new Random();
         int i = 0;
-        while(i < myRandomArray.length){
+        while (i < myRandomArray.length) {
             myRandomArray[i] = generator.nextInt();
             i++;
         }
     }
-    
-    public static void printArray(int[] array){
+
+    public static void printArray0(int[] array) {
         int i = 0;
-        System.out.println(array[i]);
-        while (){
-            
+        while (i < array.length) {
+            System.out.println(array[i]);
+            i++;
         }
     }
+
+    public static void printArray1(int[] array) {
+        int i = 0;
+        while (true) {
+            System.out.println(array[i]);
+            i++;
+            if (i == array.length){
+                break;
+            }
+        }
+    }
+    
+    public static void printArray2(int[] array) {
+        for(int i = 0; i < array.length; i++){
+            System.out.println(array[i]);            
+        }
+    }
+    
 }
