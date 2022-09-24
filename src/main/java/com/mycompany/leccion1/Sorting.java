@@ -13,10 +13,16 @@ import java.util.Random;
 public class Sorting {
 
     public static void main(String[] args) {
+        int[] testValues = {3, 4, 1};
         initialize();
-        printArray2(myRandomArray);
+        for (int testValue: testValues){
+            printArray7(myOrderedArray, testValue);
+        }
     }
     static int[] myRandomArray;
+    
+    static int n = 20;
+    static int[] myOrderedArray = new int[n];
 
     public static void initialize() {
         int[] myEmptyArray = {};
@@ -31,6 +37,7 @@ public class Sorting {
             myRandomArray[i] = generator.nextInt();
             i++;
         }
+        int j = 0;
     }
 
     public static void printArray0(int[] array) {
@@ -58,4 +65,33 @@ public class Sorting {
         }
     }
     
+    public static void printArray3(int[] array){
+        for(int value: array){
+            System.out.println(value);
+        }
+    }
+    
+    public static void printArray4(int[] array) {
+        for(int i = 0; i < array.length; i += 2){
+            System.out.println(array[i]);            
+        }
+    }
+    
+    public static void printArray5(int[] array) {
+        for(int i = 1; i < array.length; i += 2){
+            System.out.println(array[i]);            
+        }
+    }
+    
+    public static void printArray6(int[] array) {
+        for(int i = array.length - 1; i != -1; i--){
+            System.out.println(array[i]);
+        }
+    }
+    
+    public static void printArray7(int[] array, int j) {
+        for(int i = array.length - 1; i > -1; i -= j){
+            System.out.println(array[i]);
+        }
+    }
 }
