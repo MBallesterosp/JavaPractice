@@ -12,18 +12,23 @@ import java.util.Random;
  */
 public class Sorting {
 
+    static int[] myRandomArray;
+
+    static int n = 20;
+    static int[] myOrderedArray = new int[n];
+
     public static void main(String[] args) {
         int[] testValues = {3, 4, 1};
         initialize();
-        for (int testValue: testValues){
+        for (int testValue : testValues) {
             printArrayInReverseSkippingUsingWhile(myOrderedArray, testValue);
         }
-        printArrayUsingFor(myOrderedArray);
+        printArrayUsingForOnlyEven(myOrderedArray);
+        printArrayUsingDoWhileSkipping(myOrderedArray);
+        printArrayUsingWhile(myOrderedArray);
+        printArrayUsingForOnlyEven(myOrderedArray);
+        printArrayUsingForOnlyEven({'a', 'd', 'i', 'o', 's'});
     }
-    static int[] myRandomArray;
-    
-    static int n = 20;
-    static int[] myOrderedArray = new int[n];
 
     public static void initialize() {
         int[] myEmptyArray = {};
@@ -31,6 +36,8 @@ public class Sorting {
         int[] myEmptyArrayThree = { , };
         int[] myArray = {12};
         int[] myArrayTwo = {12, 30};
+        char[] myChars = {'h', 'e', 'l', 'l', 'o'};
+        String hello = new String(myChars);
         myRandomArray = new int[10];
         Random generator = new Random();
         int i = 0;
@@ -40,24 +47,71 @@ public class Sorting {
         }
         int j = 0;
         while (j < myOrderedArray.length) {
-            myOrderedArray[j] = j+1;
+            myOrderedArray[j] = j + 1;
             j++;
         }
-        int k = myOrderedArray.length-1;
+        int k = myOrderedArray.length - 1;
         while ((-1 < k) && (k < myOrderedArray.length)) {
-            myOrderedArray[k] = myOrderedArray.length-k;
+            myOrderedArray[k] = myOrderedArray.length - k;
             k--;
         }
     }
 
     //mealone
-    public static void printArrayUsingFor(int[] array) {
-        for(int i = 0; i < array.length; i++){
+    public static void printArrayUsingForOnlyEven(int[] array) {
+        String name = new Object(){}.getClass().getEnclosingMethod().getName();
+        System.out.println(name);
+        for (int i = 0; i < array.length; i++) {
+            if ((i % 2) == 1)
+                continue;
             System.out.println(array[i]);
         }
     }
-    
+
+    public static void printArrayUsingForOnlyEven(char[] array) {
+        String name = new Object(){}.getClass().getEnclosingMethod().getName();
+        System.out.println(name);
+        for (int i = 0; i < array.length; i++) {
+            if ((i % 2) == 1)
+                continue;
+            System.out.println(array[i]);
+        }
+    }
+
+    public static void printArrayUsingForEach(int[] array) {
+        for (int value : array) {
+            System.out.println(value);
+        }
+    }
+
+    public static void printArrayUsingDoWhileSkipping(int[] array) {
+        String name = new Object() {
+        }.getClass().getEnclosingMethod().getName();
+        System.out.println(name);
+        int i = 0;
+        do {
+            if ((i % 2) == 0) {
+                System.out.println(array[i]);
+            }
+            i++;
+        } while (i < array.length);
+    }
+
+    public static void printArrayUsingDoWhile(int[] array) {
+        String name = new Object() {
+        }.getClass().getEnclosingMethod().getName();
+        System.out.println(name);
+        int i = 0;
+        do {
+            System.out.println(array[i]);
+            i++;
+        } while (i < array.length);
+    }
+
     public static void printArrayUsingWhile(int[] array) {
+        String name = new Object() {
+        }.getClass().getEnclosingMethod().getName();
+        System.out.println(name);
         int i = 0;
         while (i < array.length) {
             System.out.println(array[i]);
@@ -66,21 +120,21 @@ public class Sorting {
     }
 
     //mealone
-    public static void printArrayWhitTrueUsingFor(int[] array) {
-        for(int i = 0; true; i++){
+    public static void printArrayWithTrueUsingFor(int[] array) {
+        for (int i = 0; true; i++) {
             System.out.println(array[i]);
-            if(i != array.length){
+            if (i != array.length) {
                 break;
             }
         }
     }
-    
-    public static void printArrayWhitTrueUsingWhile(int[] array) {
+
+    public static void printArrayWithTrueUsingWhile(int[] array) {
         int i = 0;
         while (true) {
             System.out.println(array[i]);
             i++;
-            if (i == array.length){
+            if (i == array.length) {
                 break;
             }
         }
@@ -88,98 +142,97 @@ public class Sorting {
 
     //mealone
     public static void printArrayNormalUsingWhile(int[] array) {
-        String name = new Object(){}.getClass().getEnclosingMethod().getName();
-        System.out.println(name);        
-        int i = 0;
-        while(i < array.length){
-            System.out.println(array[i]);    
-            i++;
-        }
-    }
-    
-    public static void printArrayNormalUsingFor(int[] array) {
-        for(int i = 0; i < array.length; i++){
-            System.out.println(array[i]);            
-        }
-    }
-
-    //tengo dudas
-    public static void printArrayValueUsingWhile(int[] array){
-        String name = new Object(){}.getClass().getEnclosingMethod().getName();
+        String name = new Object() {
+        }.getClass().getEnclosingMethod().getName();
         System.out.println(name);
         int i = 0;
-        while( i < array.length){
+        while (i < array.length) {
             System.out.println(array[i]);
             i++;
         }
     }
-    
-    public static void printArrayValueUsingFor(int[] array){
-        for(int value: array){
-            System.out.println(value);
+
+    public static void printArrayNormalUsingFor(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+    }
+
+    //tengo dudas
+    public static void printArrayValueUsingWhile(int[] array) {
+        String name = new Object() {
+        }.getClass().getEnclosingMethod().getName();
+        System.out.println(name);
+        int i = 0;
+        while (i < array.length) {
+            System.out.println(array[i]);
+            i++;
         }
     }
 
     //mealone
     public static void printArrayEvenNumbersUsingWhile(int[] array) {
-        String name = new Object(){}.getClass().getEnclosingMethod().getName();
-        System.out.println(name);        
+        String name = new Object() {
+        }.getClass().getEnclosingMethod().getName();
+        System.out.println(name);
         int i = 0;
-        while(i < array.length){
-            System.out.println(array[i]);            
+        while (i < array.length) {
+            System.out.println(array[i]);
             i += 2;
         }
     }
-    
+
     public static void printArrayEvenNumbersUsingFor(int[] array) {
-        for(int i = 0; i < array.length; i += 2){
-            System.out.println(array[i]);            
+        for (int i = 0; i < array.length; i += 2) {
+            System.out.println(array[i]);
         }
     }
 
     //mealone
     public static void printArrayOddNumbersUsingWhile(int[] array) {
-        String name = new Object(){}.getClass().getEnclosingMethod().getName();
-        System.out.println(name);        
+        String name = new Object() {
+        }.getClass().getEnclosingMethod().getName();
+        System.out.println(name);
         int i = 1;
-        while(i < array.length){
+        while (i < array.length) {
             System.out.println(array[i]);
             i += 2;
         }
     }
-    
+
     public static void printArrayOddNumbersUsingFor(int[] array) {
-        for(int i = 1; i < array.length; i += 2){
-            System.out.println(array[i]);          
+        for (int i = 1; i < array.length; i += 2) {
+            System.out.println(array[i]);
         }
     }
-    
+
     public static void printArrayInReverseUsingWhile(int[] array) {
-        String name = new Object(){}.getClass().getEnclosingMethod().getName();
+        String name = new Object() {
+        }.getClass().getEnclosingMethod().getName();
         System.out.println(name);
-        int i = array.length -1;
-        while(i > -1){
+        int i = array.length - 1;
+        while (i > -1) {
             System.out.println(array[i]);
             i--;
         }
     }
-    
+
     public static void printArrayInReverseUsingFor(int[] array) {
-        for(int i = array.length - 1; i != -1; i--){
+        for (int i = array.length - 1; i != -1; i--) {
             System.out.println(array[i]);
         }
     }
-    
+
     public static void printArrayInReverseSkippingUsingWhile(int[] array, int j) {
-        int i = array.length-1;
-        while(-1 < i){
+        int i = array.length - 1;
+        while (-1 < i) {
             System.out.println(array[i]);
-            i -= j;         
+            i -= j;
         }
     }
-        
+
     public static void printArrayInReverseSkippingUsingFor(int[] array, int j) {
-        for(int i = array.length - 1; i > -1; i -= j){
+        for (int i = array.length - 1; i > -1; i -= j) {
             System.out.println(array[i]);
         }
     }
