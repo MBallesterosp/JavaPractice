@@ -37,6 +37,37 @@ public class Sorting {
         printArrayUsingForOnlyEven(myCharArray);
         printArray(myStringArray);
         printArray(swap(myStringArray, 1, 2));
+        printArray(copy(myStringArray));
+        System.out.println(compare(myStringArray, myStringArray));
+    }
+
+    public static boolean compare(String[] a, String[] b) {
+        System.out.println(new Object() {
+        }.getClass().getEnclosingMethod().getName());
+        if (a.length != b.length) {
+            return false;
+        }
+        int i;
+        i = 0;
+        while (i < a.length) {
+            if (a[i] == b[i]) {
+                i++;
+            }
+            if (a[i] != b[i]){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static String[] copy(String[] original) {
+        System.out.println(new Object() {
+        }.getClass().getEnclosingMethod().getName());
+        String[] copy = new String[original.length];
+        for (int i = 0; i < original.length; i++) {
+            copy[i] = original[i];
+        }
+        return copy;
     }
 
     public static String[] swap(String[] args, int i, int j) {
