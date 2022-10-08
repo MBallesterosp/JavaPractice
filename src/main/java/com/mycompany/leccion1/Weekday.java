@@ -10,5 +10,11 @@ package com.mycompany.leccion1;
  * @author mario
  */
 public enum Weekday {
-    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
+    
+    public static void main(String[] args){
+        for(Weekday d: Weekday.values()){
+            System.out.println(d);
+        }
+    }
 }
