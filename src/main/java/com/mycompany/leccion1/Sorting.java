@@ -18,6 +18,12 @@ public class Sorting {
     static int[] myOrderedArray = new int[n];
 
     public static void main(String[] args) {
+        String[] myStringArray;
+        myStringArray = new String[4];
+        myStringArray[0] = "Rafael";
+        myStringArray[1] = "Miguel";
+        myStringArray[2] = "Uriel";
+        myStringArray[3] = "Gabriel";
         int[] testValues = {3, 4, 1};
         initialize();
         for (int testValue : testValues) {
@@ -27,7 +33,33 @@ public class Sorting {
         printArrayUsingDoWhileSkipping(myOrderedArray);
         printArrayUsingWhile(myOrderedArray);
         printArrayUsingForOnlyEven(myOrderedArray);
-        printArrayUsingForOnlyEven({'a', 'd', 'i', 'o', 's'});
+        char[] myCharArray = {'a', 'd', 'i', 'o', 's'};
+        printArrayUsingForOnlyEven(myCharArray);
+        printArray(myStringArray);
+        printArray(swap(myStringArray, 1, 2));
+    }
+
+    public static String[] swap(String[] args, int i, int j) {
+        System.out.println(new Object() {
+        }.getClass().getEnclosingMethod().getName());
+        String[] a = new String[args.length];
+        int k;
+        k = 0;
+        while (k < args.length) {
+            a[k] = args[k];
+            k++;
+        }
+        a[i] = args[j];
+        a[j] = args[i];
+        return a;
+    }
+
+    public static void printArray(String[] args) {
+        System.out.println(new Object() {
+        }.getClass().getEnclosingMethod().getName());
+        for (int i = 0; i < args.length; i++) {
+            System.out.println(args[i]);
+        }
     }
 
     public static void initialize() {
@@ -59,21 +91,25 @@ public class Sorting {
 
     //mealone
     public static void printArrayUsingForOnlyEven(int[] array) {
-        String name = new Object(){}.getClass().getEnclosingMethod().getName();
+        String name = new Object() {
+        }.getClass().getEnclosingMethod().getName();
         System.out.println(name);
         for (int i = 0; i < array.length; i++) {
-            if ((i % 2) == 1)
+            if ((i % 2) == 1) {
                 continue;
+            }
             System.out.println(array[i]);
         }
     }
 
     public static void printArrayUsingForOnlyEven(char[] array) {
-        String name = new Object(){}.getClass().getEnclosingMethod().getName();
+        String name = new Object() {
+        }.getClass().getEnclosingMethod().getName();
         System.out.println(name);
         for (int i = 0; i < array.length; i++) {
-            if ((i % 2) == 1)
+            if ((i % 2) == 1) {
                 continue;
+            }
             System.out.println(array[i]);
         }
     }
