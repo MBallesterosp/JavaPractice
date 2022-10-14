@@ -24,6 +24,13 @@ public class Sorting {
         myStringArray[1] = "Miguel";
         myStringArray[2] = "Uriel";
         myStringArray[3] = "Gabriel";
+        String[] mySupremeArray;
+        mySupremeArray = new String[4];
+        mySupremeArray[0] = "Rafael";
+        mySupremeArray[1] = "Miguel";
+        mySupremeArray[2] = "Uriel";
+        mySupremeArray[3] = "Raul";
+
         int[] testValues = {3, 4, 1};
         initialize();
         for (int testValue : testValues) {
@@ -38,10 +45,11 @@ public class Sorting {
         printArray(myStringArray);
         printArray(swap(myStringArray, 1, 2));
         printArray(copy(myStringArray));
-        System.out.println(compare(myStringArray, myStringArray));
+        System.out.println(equals(myStringArray, myStringArray));
+        System.out.println(equals(myStringArray, mySupremeArray));
     }
 
-    public static boolean compare(String[] a, String[] b) {
+    public static boolean equals(String[] a, String[] b) {
         System.out.println(new Object() {
         }.getClass().getEnclosingMethod().getName());
         if (a.length != b.length) {
@@ -49,11 +57,11 @@ public class Sorting {
         }
         int i;
         i = 0;
-        while (i < a.length) {
+        while (i < a.length ) {
+            boolean c = (a[i] == b[i]);
             if (a[i] == b[i]) {
                 i++;
-            }
-            if (a[i] != b[i]){
+            } else {
                 return false;
             }
         }
