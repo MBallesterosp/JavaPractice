@@ -19,11 +19,12 @@ public class Sorting {
 
     public static void main(String[] args) {
         String[] myStringArray;
-        myStringArray = new String[4];
+        myStringArray = new String[5];
         myStringArray[0] = "Rafael";
         myStringArray[1] = "Miguel";
         myStringArray[2] = "Uriel";
         myStringArray[3] = "Gabriel";
+        myStringArray[4] = "Mario";
         String[] mySupremeArray;
         mySupremeArray = new String[4];
         mySupremeArray[0] = "Rafael";
@@ -43,8 +44,9 @@ public class Sorting {
         char[] myCharArray = {'a', 'd', 'i', 'o', 's'};
         printArrayUsingForOnlyEven(myCharArray);
         printArray(myStringArray);
-        printArray(swap(myStringArray, 1, 2));
+        printArray(swap(myStringArray, 1, 3));
         printArray(copy(myStringArray));
+        printArray(reverse(myStringArray));
         System.out.println(equals(myStringArray, myStringArray));
         System.out.println(equals(myStringArray, mySupremeArray));
     }
@@ -57,7 +59,7 @@ public class Sorting {
         }
         int i;
         i = 0;
-        while (i < a.length ) {
+        while (i < a.length) {
             boolean c = (a[i] == b[i]);
             if (a[i] == b[i]) {
                 i++;
@@ -81,16 +83,24 @@ public class Sorting {
     public static String[] swap(String[] args, int i, int j) {
         System.out.println(new Object() {
         }.getClass().getEnclosingMethod().getName());
-        String[] a = new String[args.length];
-        int k;
-        k = 0;
-        while (k < args.length) {
-            a[k] = args[k];
-            k++;
+        String aux = args[i];
+        args[i] = args[j];
+        args[j] = aux;
+        return args;
+    }
+
+    public static String[] reverse(String[] args) {
+        System.out.println(new Object() {
+        }.getClass().getEnclosingMethod().getName());
+        int j = args.length - 1;
+        for (int i = 0; i < (args.length / 2); i++) {
+            String aux = args[i];
+            args[i] = args[j];
+            args[j] = aux;
+            j--;
         }
-        a[i] = args[j];
-        a[j] = args[i];
-        return a;
+        return args;
+
     }
 
     public static void printArray(String[] args) {
