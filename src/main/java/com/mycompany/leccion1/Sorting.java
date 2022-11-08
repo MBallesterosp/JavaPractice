@@ -50,6 +50,18 @@ public class Sorting {
         System.out.println(equals(myStringArray, myStringArray));
         System.out.println(equals(myStringArray, mySupremeArray));
     }
+    
+    public static boolean contains(String[] array, String piece){
+        System.out.println(new Object() {
+        }.getClass().getEnclosingMethod().getName());
+        String[] array;
+        array = new String[0];
+        int i;
+        if (array[i] == piece){
+            return true;
+        }
+        
+    }
 
     public static boolean equals(String[] a, String[] b) {
         System.out.println(new Object() {
