@@ -31,7 +31,6 @@ public class Sorting {
         mySupremeArray[1] = "Miguel";
         mySupremeArray[2] = "Uriel";
         mySupremeArray[3] = "Raul";
-
         int[] testValues = {3, 4, 1};
         initialize();
         for (int testValue : testValues) {
@@ -49,18 +48,32 @@ public class Sorting {
         printArray(reverse(myStringArray));
         System.out.println(equals(myStringArray, myStringArray));
         System.out.println(equals(myStringArray, mySupremeArray));
+        String[] array;
+        array = new String[3];
+        array[0] = "a";
+        array[1] = "s";
+        array[2] = "t";
+        System.out.println(array[0]);
+        String piece;
+        piece = new String();
+        System.out.println(piece);
+        System.out.println(contains(array, piece));
+        System.out.println("a" == "a");
+        System.out.println("a" == new String("a"));
+        System.out.println(new String("a") == new String("a"));
+        System.out.println(new String("a").equals("a"));
+        System.out.println(new String("a").equals(new String("a")));
     }
-    
-    public static boolean contains(String[] array, String piece){
+
+    public static boolean contains(String[] array, String piece) {
         System.out.println(new Object() {
         }.getClass().getEnclosingMethod().getName());
-        String[] array;
-        array = new String[0];
-        int i;
-        if (array[i] == piece){
-            return true;
+        for (int i = 0; i < array.length; i++) {
+            if (piece.equals(array[i])) {
+                return true;
+            }
         }
-        
+        return false;
     }
 
     public static boolean equals(String[] a, String[] b) {
