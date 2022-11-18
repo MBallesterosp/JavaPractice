@@ -17,7 +17,7 @@ public class Sorting {
     static int n = 20;
     static int[] myOrderedArray = new int[n];
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchPieceExistsException {
         String[] myStringArray;
         myStringArray = new String[5];
         myStringArray[0] = "Rafael";
@@ -50,9 +50,9 @@ public class Sorting {
         System.out.println(equals(myStringArray, mySupremeArray));
         String[] array;
         array = new String[3];
-        array[0] = "a";
-        array[1] = "s";
-        array[2] = "t";
+        array[0] = "";
+        array[1] = "helpme";
+        array[2] = "ireallyneedsleep";
         System.out.println(array[0]);
         String piece;
         piece = new String();
@@ -63,8 +63,21 @@ public class Sorting {
         System.out.println(new String("a") == new String("a"));
         System.out.println(new String("a").equals("a"));
         System.out.println(new String("a").equals(new String("a")));
+        System.out.println(indexOf(array, piece));
     }
 
+    public static int indexOf (String[] array, String piece) 
+            throws NoSuchPieceExistsException{
+        System.out.println(new Object() {
+        }.getClass().getEnclosingMethod().getName());
+        for (int i = 0; i < array.length; i++) {
+            if (piece.equals(array[i])) {
+                return i;
+            }
+        }
+        throw new NoSuchPieceExistsException();
+    }
+    
     public static boolean contains(String[] array, String piece) {
         System.out.println(new Object() {
         }.getClass().getEnclosingMethod().getName());
