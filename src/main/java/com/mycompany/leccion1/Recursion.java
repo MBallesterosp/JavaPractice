@@ -33,11 +33,12 @@ public class Recursion {
         }
     }
     
+    //helpme
     public static int factorial(int n){
         n-- ;
         if (n == 1) {
             System.out.println(n);
-            factorial(n);
+            factorial(n);   
         }
         return 1;
     }
