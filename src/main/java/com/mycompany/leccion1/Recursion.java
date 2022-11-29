@@ -16,30 +16,68 @@ public class Recursion {
     public static void main(String[] args) {
         //repeatInfiniteTimes();
         repeatFiniteTimes();
+        int n = 4;
+        System.out.println(factorial(n));
+        n = 9;
+        System.out.println(fibonacci(n));
+        char[] array = new char[6];
+        System.out.println(isPalindrome(array));
     }
 
     public static void repeatInfiniteTimes() {
         System.out.println("algo");
         repeatInfiniteTimes();
     }
-    
+
     static int count = 0;
 
     public static void repeatFiniteTimes() {
-        count ++ ;
+        System.out.println(new Object() {
+        }.getClass().getEnclosingMethod().getName());
+        count++;
         if (count <= 20) {
             System.out.println(count);
             repeatFiniteTimes();
         }
     }
-    
-    //helpme
-    public static int factorial(int n){
-        n-- ;
+
+    public static int factorial(int n) {
+        System.out.println(new Object() {
+        }.getClass().getEnclosingMethod().getName());
         if (n == 1) {
-            System.out.println(n);
-            factorial(n);   
+            return 1;
         }
-        return 1;
+        System.out.println(n);
+        return n * factorial(n - 1);
+    }
+
+    public static int fibonacci(int n) {
+        System.out.println(new Object() {
+        }.getClass().getEnclosingMethod().getName());
+        if (n == 1) {
+            return 1;
+        }
+        if (n == 2) {
+            return 2;
+        }
+        System.out.println(n);
+        return fibonacci(n - 2) + fibonacci(n - 1);
+    }
+
+    public static boolean isPalindrome(char[] array) {
+        System.out.println(new Object() {
+        }.getClass().getEnclosingMethod().getName());
+        int i = 0;
+        if (array.length == 1) {
+            return true;
+        }
+        if (array.length == 0) {
+            return true;
+        }
+        if (array[array.length - 1] != array[i]) {
+            return false;
+        }
+        return isPalindrome(array);
+
     }
 }
